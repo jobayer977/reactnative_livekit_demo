@@ -5,6 +5,6 @@
 RoomPage.js
 
 ```
-const LIVEKET_URL = 'wss://xxxxx';
-const TOKEN_URL = 'https://xxxxx';
+const LIVEKET_SERVER_URL = 'wss://xxxxx';
+const TOKEN_SERVER_URL = 'https://xxxxx';
 ```

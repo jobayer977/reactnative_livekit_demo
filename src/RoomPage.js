@@ -13,8 +13,8 @@ import {useRoom, useParticipant} from 'livekit-react-native';
 import {RoomControls} from './RoomControls';
 import {ParticipantView} from './ParticipantView';
 
-const LIVEKET_URL = 'wss://xxxxx';
-const TOKEN_URL = 'https://xxxxx';
+const LIVEKET_SERVER_URL = 'wss://xxxxx';
+const TOKEN_SERVER_URL = 'https://xxxxx';
 
 export const RoomPage = ({navigation, route}) => {
   const [, setIsConnected] = useState(false);
@@ -36,7 +36,7 @@ export const RoomPage = ({navigation, route}) => {
         userName,
       });
 
-      const res = await fetch(TOKEN_URL, {
+      const res = await fetch(TOKEN_SERVER_URL, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -54,7 +54,7 @@ export const RoomPage = ({navigation, route}) => {
     if (token) {
       console.log('Connecting to ROOM....');
       room
-        .connect(LIVEKET_URL, token, {})
+        .connect(LIVEKET_SERVER_URL, token, {})
         .then(r => {
           if (!r) {
             console.log('Failed to connect');
